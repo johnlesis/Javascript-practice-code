@@ -26,7 +26,7 @@ BankAccount.prototype.transfer = function (BankAccount,amount) {
   if (this.amount>=amount) {
     this.amount-=amount;
     this.amount+=amount;
-    console.log (`${amount} tranfered from ${this} to ${BankAccount+amount}`);
+    console.log (`${amount} tranfered from ${this} to ${BankAccount}`);
   }
   else {
     console.log(`transfer failed. insuficient deposits.`)
