@@ -7,24 +7,23 @@ class Customer{
       else
         this.orders = orders;
   }
-  
+
   placeOrder(order) {
       this.orders.push(order);
   }
 
-  toString(){
+  toString() {
     let header = `Address: ${this.address}, Name: ${this.name} \n` +
-    "==========================================\n"
+      "==========================================\n";
     let rest = "";
     let sum = 0.0;
     for (let order of this.orders) {
       rest += "\n" + order;
       sum += order.payment.amount;
     }
-    return header + rest + `\n\n Sum${sum}`;
+    return header + rest + `\n\nSum: ${sum}`;
   }
 }
-
 
 class Order { 
   constructor(date,payment) {
@@ -72,7 +71,7 @@ class Check extends Payment{
 
 
 let John = new Customer("Vasillisis Sofias 666","John Lesis");
-John.placeOrder(new Order("09202912",new Payment("20.70")));
-John.placeOrder(new Order("09202912",new Credit("34.60", "2890 0983 0202 3890",2026)));
-John.placeOrder(new Order("09202912",new Check("26.00", "9092", "bf02190983")));
+John.placeOrder(new Order("09202912",new Payment(20.70)));
+John.placeOrder(new Order("09202912",new Credit(40.59, "2890 0983 0202 3890",2026)));
+John.placeOrder(new Order("09202912",new Check(09.58, "9092", "bf02190983")));
 console.log(`${John}`);
